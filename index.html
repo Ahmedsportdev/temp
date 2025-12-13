@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write A Note</title>
+    <link rel="stylesheet" href="computer-styling.css" />
+  </head>
+  <body onload="document.getElementById('inp').value = ''">
+    <div id="all-c-n" class="all-c-n">
+      <div id="a-d" class="alert-div">
+        <div class="a-icon">
+          <div class="sub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="warn">
+              <path
+                fill="yellow"
+                d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p class="f">sorry,</p>
+        <p class="se">this page in development</p>
+        <br />
+        <button id="o-b">Okay</button>
+      </div>
+      <!--sub container have all things-->
+      <!--
+        this container maked for controlla and moving all elements without needing of move the all elements
+      -->
+      <div class="container">
+        <!--container have the svg's half-->
+        <div class="sub-container-svg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            width="64"
+            height="64"
+            class="pen-icon"
+            onclick="SmoothScreenTo()"
+          >
+            <rect x="12" y="44" width="40" height="8" fill="#ccc" />
+            <path d="M50 12L20 42l-4 12 12-4 30-30z" fill="#8a2be8" />
+            <path d="M46 16L24 38" stroke="#fff" stroke-width="2" />
+          </svg>
+        </div>
+        <!--container have the note's half-->
+        <div class="sub-container-note">
+          <!--
+            this container maked for controll and moving all elements without needing of move the all elements
+          -->
+          <div class="second-sub-container">
+            <!-- the inp and btn container -->
+            <div class="form">
+              <h3 class="title">Write your note</h3>
+              <input value="" type="text" id="inp" class="note" />
+              <label for="inp">Write Your Note</label>
+              <input type="button" value="Submit" class="btn" id="sub" />
+              <input type="button" value="Remove" class="btn" id="rem" />
+            </div>
+            <!--note's svg (from internet & creator -->
+            <div class="n-ic_c">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 512 512"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+                class="n-svg"
+                id="notes_place_icon"
+              >
+                <g
+                  id="_x32_4_x2C__Book_x2C__notebook_x2C__notepad_x2C__text_x2C__paper"
+                >
+                  <g>
+                    <g>
+                      <polygon
+                        style="fill: #dd6426"
+                        points="431.313,457.875 431.313,484.438 431.313,511 256,511 80.687,511 80.687,484.438 
+				80.687,457.875 256,436.625 			"
+                      />
+                      <path
+                        style="fill: #e8e8ed"
+                        d="M80.687,64.75v393.125h350.625V64.75C413.625,64.75,94.149,64.75,80.687,64.75z"
+                      />
+                      <path
+                        style="fill: #5b727b"
+                        d="M149.75,1c-20.505,0-37.188,16.682-37.188,37.188V64.75c6.356,0,13.487,0,21.25,0V38.188
+				c0-8.788,7.15-15.938,15.938-15.938c4.26,0,8.263,1.657,11.265,4.658c3.013,3.02,4.673,7.026,4.673,11.28V64.75v31.875
+				c0,5.868,4.757,10.625,10.625,10.625s10.625-4.757,10.625-10.625V64.75V38.188c0-9.922-3.865-19.259-10.889-26.297
+				C169.026,4.867,159.687,1,149.75,1z"
+                      />
+                      <path
+                        style="fill: #5b727b"
+                        d="M245.375,1c-20.505,0-37.188,16.682-37.188,37.188V64.75c6.991,0,14.089,0,21.25,0V38.188
+				c0-8.788,7.15-15.938,15.938-15.938c4.26,0,8.263,1.657,11.264,4.659c3.014,3.019,4.673,7.025,4.673,11.279V64.75v31.875
+				c0,5.868,4.757,10.625,10.625,10.625s10.625-4.757,10.625-10.625V64.75V38.188c0-9.923-3.865-19.259-10.889-26.297
+				C264.653,4.868,255.313,1,245.375,1z"
+                      />
+                      <path
+                        style="fill: #5b727b"
+                        d="M367.299,11.891C360.278,4.868,350.937,1,341,1c-20.505,0-37.188,16.682-37.188,37.188V64.75
+				c7.217,0,14.317,0,21.25,0V38.188c0-8.788,7.149-15.938,15.938-15.938c4.26,0,8.263,1.657,11.264,4.659
+				c3.014,3.019,4.673,7.025,4.673,11.279V64.75v31.875c0,5.868,4.757,10.625,10.625,10.625s10.625-4.757,10.625-10.625V64.75
+				V38.188C378.188,28.265,374.322,18.929,367.299,11.891z"
+                      />
+                      <path
+                        style="fill: #7dd5f3"
+                        d="M250.688,362.25H133.812c-5.868,0-10.625-4.757-10.625-10.625S127.944,341,133.812,341h116.875
+				c5.868,0,10.625,4.757,10.625,10.625S256.556,362.25,250.688,362.25z"
+                      />
+                      <path
+                        style="fill: #7dd5f3"
+                        d="M378.188,404.75H133.812c-5.868,0-10.625-4.757-10.625-10.625s4.757-10.625,10.625-10.625h244.375
+				c5.868,0,10.625,4.757,10.625,10.625S384.055,404.75,378.188,404.75z"
+                      />
+                      <path
+                        style="fill: #7dd5f3"
+                        d="M250.688,266.625H133.812c-5.868,0-10.625-4.757-10.625-10.625s4.757-10.625,10.625-10.625
+				h116.875c5.868,0,10.625,4.757,10.625,10.625S256.556,266.625,250.688,266.625z"
+                      />
+                      <path
+                        style="fill: #7dd5f3"
+                        d="M378.188,309.125H133.812c-5.868,0-10.625-4.757-10.625-10.625s4.757-10.625,10.625-10.625
+				h244.375c5.868,0,10.625,4.757,10.625,10.625S384.055,309.125,378.188,309.125z"
+                      />
+                      <path
+                        style="fill: #7dd5f3"
+                        d="M250.688,171H133.812c-5.868,0-10.625-4.757-10.625-10.625c0-5.868,4.757-10.625,10.625-10.625
+				h116.875c5.868,0,10.625,4.757,10.625,10.625C261.313,166.243,256.556,171,250.688,171z"
+                      />
+                      <path
+                        style="fill: #7dd5f3"
+                        d="M378.188,213.5H133.812c-5.868,0-10.625-4.757-10.625-10.625s4.757-10.625,10.625-10.625h244.375
+				c5.868,0,10.625,4.757,10.625,10.625S384.055,213.5,378.188,213.5z"
+                      />
+                    </g>
+                  </g>
+                </g>
+                <g id="Layer_1"></g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--place which notes shows-->
+    <div id="writed-notes" class="writed-notes">
+      <div id="notessssss"></div>
+      <button
+        id="re"
+        onclick="setTimeout(() => {let inp = document.getElementById('inp'); inp.value = ''}, 100)"
+      >
+        Return
+      </button>
+    </div>
+
+    <!-- footer & copyrights -->
+    <footer class="footer">
+      <div class="container">
+        <div class="sub-container">
+          <p>
+            You want to write scretes 🤫 go to
+            <a data-web="1" onclick="alerting()">Write a Secret</a>
+            a site under development
+          </p>
+          <p class="copyright-p">&copy; The copyright saved for authour</p>
+          <nav>
+            <a id="authour_btn" onclick="alerting()" data-action="a" data-org="About Authour">About Authour</a>
+            <a onclick="alerting()" data-action="m" data-org="My Projects">My Projects</a>
+            <a onclick="alerting()" data-action="s" data-org="Special Thanks">Special Thanks</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripting for sytling page -->
+    <script src="Transformations.js" defer></script>
+    <!-- Main script for web -->
+    <script src="main.js"></script>
+    <!-- Transformations -->
+    <script src="a.script.js" defer></script>
+  </body>
+</html>
