@@ -4,16 +4,17 @@ let user_has_entered_before = localStorage.getItem("user_has_entered_before") ||
 window.onload = function () {
     if (user_has_entered_before === "false") {
         frist_home_page.classList.remove("hidden");
-        localStorage.setItem("user_has_entered_before", "true");
+        home_page.className = "all-c-n-hidden";
+        nav.style.opacity = "0";
     } else {
         home_page.className = "all-c-n";
-        nav.style.opacity = "1 !important";
         frist_home_page.classList.add("hidden");
+        nav.style.opacity = "1 !important";
     }
-    nav.style.opacity = "0";
 }
 // General Variables
 
+let frist_home_page = document.getElementById("frist_home_page")
 let home_page = document.getElementById("all-c-n");
 let home_btn = document.getElementById("home_btn")
 
@@ -27,13 +28,13 @@ let home_btn = document.getElementById("home_btn")
 
 // Start Home Transformations
 
-let frist_home_page = document.getElementById("frist_home_page")
 let home_page_btn = document.getElementById("home_page_btn");
 home_page_btn.addEventListener("click", () => {
     home_page.classList.toggle("all-c-n");
     frist_home_page.classList.toggle("hidden");
     home_page.className = "all-c-n";
     nav.style.opacity = "1";
+    localStorage.setItem("user_has_entered_before", "true");
 });
 
 // End Home Transformations
