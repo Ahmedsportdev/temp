@@ -141,8 +141,8 @@ a:not(.k, .header--s-a) {
   background: transparent;
   border: 1px solid #ccd;
   position: relative;
-  top: 2% !important;
-  left: 88%;
+  top: -10% !important;
+  left: 90%;
   top: 30%;
   border: none;
   border-radius: 5px;
@@ -431,23 +431,24 @@ footer div {
 
 nav a {
   position: relative;
-  margin-left: 35px;
+  margin-left: 40px;
   margin-right: 35px !important;
+  width: auto;
 }
 
 nav a:nth-child(1) {
   position: fixed !important;
-  left: 62% !important;
+  left: 55% !important;
 }
 
 nav a:nth-child(2) {
   position: fixed !important;
-  left: 72% !important;
+  left: 65% !important;
 }
 
 nav a:nth-child(3) {
   position: fixed !important;
-  left: 82% !important;
+  left: 75% !important;
 }
 
 nav a::before {
